@@ -1,5 +1,5 @@
-import { Router } from "express";
-import UsersController from "../controllers/UsersController";
+import { Router } from 'express';
+import UsersController from '../controllers/UsersController';
 import { celebrate, Joi, Segments } from 'celebrate';
 
 const usersRouter = Router();
@@ -29,7 +29,7 @@ usersRouter.post(
     },
   }),
   usersController.create,
-)
+);
 
 // Put
 usersRouter.put(
@@ -46,7 +46,7 @@ usersRouter.put(
     },
   }),
   usersController.update,
-)
+);
 
 // Delete
 usersRouter.delete(
@@ -57,6 +57,6 @@ usersRouter.delete(
     },
   }),
   usersController.delete,
-)
+);
 
 export default usersRouter;
