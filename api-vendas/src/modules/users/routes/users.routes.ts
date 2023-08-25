@@ -9,10 +9,10 @@ const usersController = new UsersController();
 
 usersRouter.get('/', usersController.index);
 usersRouter.get(
-  '/:email',
+  '/consult/:id',
   celebrate({
     [Segments.PARAMS]: {
-      email: Joi.string().required(),
+      id: Joi.string().required(),
     },
   }),
   usersController.show,
@@ -20,7 +20,7 @@ usersRouter.get(
 
 // Post
 usersRouter.post(
-  '/',
+  '/create',
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
@@ -33,7 +33,7 @@ usersRouter.post(
 
 // Put
 usersRouter.put(
-  '/:email',
+  '/:id',
   celebrate({
     [Segments.BODY]: {
       name: Joi.string().required(),
@@ -50,10 +50,10 @@ usersRouter.put(
 
 // Delete
 usersRouter.delete(
-  '/:email',
+  '/delete/:id',
   celebrate({
     [Segments.PARAMS]: {
-      email: Joi.string().required(),
+      id: Joi.string().required(),
     },
   }),
   usersController.delete,
